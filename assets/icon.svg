@@ -1,7 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256">
   <g fill="none" stroke="#000000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M150 150 V56 a22 22 0 0 0 -44 0 V150 a40 40 0 1 0 44 0 Z"/>
-    <line x1="128" y1="96" x2="128" y2="168"/>
+    <path d="M40 120 L128 48 L216 120"/>
+    <path d="M64 112 V208 H192 V112"/>
+    <path d="M104 168 q-14 -14 0 -28 q14 -14 0 -28"/>
+    <path d="M152 168 q-14 -14 0 -28 q14 -14 0 -28"/>
   </g>
-  <circle cx="128" cy="186" r="20" fill="#000000"/>
 </svg>

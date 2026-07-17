@@ -2,8 +2,5 @@
   "0.1.0": {
     "en": "First release. Monitor temperatures, operational status and control room temperature and hot water for Thermia heat pumps via Thermia Online.",
     "sv": "Första versionen. Avläs temperaturer och driftstatus samt styr rumstemperatur och varmvatten för Thermia-värmepumpar via Thermia Online."
-  },
-  "0.1.1": {
-    "en": "A whole new app"
   }
 }

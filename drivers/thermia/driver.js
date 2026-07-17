@@ -38,19 +38,22 @@ class ThermiaDriver extends Homey.Driver {
 
   onPair(session) {
     let creds = null;
+    let client = null;
+    let cachedDevices = [];
 
     session.setHandler('login', async ({ username, password }) => {
-      const client = new ThermiaClient(username, password);
-      // Kastar om inloggningen misslyckas -> visas for anvandaren
-      await client.getDevices();
+      client = new ThermiaClient(username, password);
+      // Kastar om inloggningen misslyckas -> visas for anvandaren.
+      // Vi cachar enheterna sa list_devices slipper logga in igen.
+      cachedDevices = await client.getDevices();
       creds = { username, password };
       return true;
     });
 
     session.setHandler('list_devices', async () => {
-      const client = new ThermiaClient(creds.username, creds.password);
-      const devices = await client.getDevices();
-      return devices.map((d) => ({
+      // Ateranvander tokenet fran login (ingen ny inloggning).
+      if (!cachedDevices.length && client) cachedDevices = await client.getDevices();
+      return cachedDevices.map((d) => ({
         name: 'Thermia ' + (d.name || d.model || d.id),
         data: { id: String(d.id) },
         store: { email: creds.username, password: creds.password },
