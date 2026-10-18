@@ -1,6 +1,6 @@
 {
   "id": "com.niklasjohansson.thermia",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": ["local"],
@@ -160,7 +160,7 @@
       "class": "thermostat",
       "capabilities": [
         "target_temperature",
-        "measure_temperature.outdoor",
+        "measure_temperature",
         "measure_temperature.supply",
         "measure_temperature.return",
         "measure_temperature.brine_in",
@@ -178,12 +178,12 @@
           "max": 35,
           "step": 1
         },
-        "measure_temperature.outdoor": { "title": { "en": "Outdoor", "sv": "Ute" } },
-        "measure_temperature.supply": { "title": { "en": "Supply line", "sv": "Framledning" } },
-        "measure_temperature.return": { "title": { "en": "Return line", "sv": "Returledning" } },
-        "measure_temperature.brine_in": { "title": { "en": "Brine in", "sv": "Brine in" } },
-        "measure_temperature.brine_out": { "title": { "en": "Brine out", "sv": "Brine ut" } },
-        "measure_temperature.hotwater": { "title": { "en": "Hot water", "sv": "Varmvatten" } }
+        "measure_temperature": { "title": { "en": "Outdoor temperature", "sv": "Utetemperatur" }, "min": -50, "max": 150, "decimals": 1 },
+        "measure_temperature.supply": { "title": { "en": "Supply line", "sv": "Framledning" }, "min": -50, "max": 150, "decimals": 1 },
+        "measure_temperature.return": { "title": { "en": "Return line", "sv": "Returledning" }, "min": -50, "max": 150, "decimals": 1 },
+        "measure_temperature.brine_in": { "title": { "en": "Brine in", "sv": "Brine in" }, "min": -50, "max": 150, "decimals": 1 },
+        "measure_temperature.brine_out": { "title": { "en": "Brine out", "sv": "Brine ut" }, "min": -50, "max": 150, "decimals": 1 },
+        "measure_temperature.hotwater": { "title": { "en": "Hot water", "sv": "Varmvatten" }, "min": -50, "max": 150, "decimals": 1 }
       },
       "images": {
         "small": "/drivers/thermia/assets/images/small.png",

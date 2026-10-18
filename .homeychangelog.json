@@ -1,4 +1,8 @@
 {
+  "0.1.1": {
+    "en": "The outdoor temperature is now the device's main temperature, so it can be used in widgets. Sub-zero temperatures are no longer clamped to 0 in Insights.",
+    "sv": "Utomhustemperaturen är nu enhetens huvudtemperatur och kan användas i widgetar. Minusgrader klipps inte längre till 0 i Insights."
+  },
   "0.1.0": {
     "en": "First release. Monitor temperatures, operational status and control room temperature and hot water for Thermia heat pumps via Thermia Online.",
     "sv": "Första versionen. Avläs temperaturer och driftstatus samt styr rumstemperatur och varmvatten för Thermia-värmepumpar via Thermia Online."

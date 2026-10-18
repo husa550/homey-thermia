@@ -46,7 +46,7 @@ class ThermiaDevice extends Homey.Device {
     };
 
     const t = d.temperatures || {};
-    await set('measure_temperature.outdoor', t.outdoor);
+    await set('measure_temperature', t.outdoor);
     await set('measure_temperature.supply', t.supply);
     await set('measure_temperature.return', t.return);
     await set('measure_temperature.brine_in', t.brine_in);
