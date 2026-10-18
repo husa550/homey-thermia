@@ -6,5 +6,8 @@
   "0.1.0": {
     "en": "First release. Monitor temperatures, operational status and control room temperature and hot water for Thermia heat pumps via Thermia Online.",
     "sv": "Första versionen. Avläs temperaturer och driftstatus samt styr rumstemperatur och varmvatten för Thermia-värmepumpar via Thermia Online."
+  },
+  "0.1.4": {
+    "en": "Real product and device images (actual Thermia Atlas, with logo), plus the outdoor-temperature and Insights improvements."
   }
 }

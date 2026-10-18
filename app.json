@@ -1,21 +1,32 @@
 {
   "id": "com.niklasjohansson.thermia",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "compatibility": ">=5.0.0",
   "sdk": 3,
-  "platforms": ["local"],
-  "name": { "en": "Thermia Online", "sv": "Thermia Online" },
+  "platforms": [
+    "local"
+  ],
+  "name": {
+    "en": "Thermia Online",
+    "sv": "Thermia Online"
+  },
   "description": {
     "en": "Smarter comfort from your heat pump.",
     "sv": "Smartare komfort från din värmepump."
   },
-  "category": ["climate"],
+  "category": [
+    "climate"
+  ],
   "permissions": [],
   "brandColor": "#E4002B",
-  "author": { "name": "Niklas Johansson" },
+  "author": {
+    "name": "Niklas Johansson"
+  },
   "homepage": "https://github.com/husa550/homey-thermia",
   "support": "https://github.com/husa550/homey-thermia/issues",
-  "bugs": { "url": "https://github.com/husa550/homey-thermia/issues" },
+  "bugs": {
+    "url": "https://github.com/husa550/homey-thermia/issues"
+  },
   "images": {
     "small": "/assets/images/small.png",
     "large": "/assets/images/large.png"
@@ -23,7 +34,10 @@
   "capabilities": {
     "thermia_status": {
       "type": "string",
-      "title": { "en": "Status", "sv": "Driftstatus" },
+      "title": {
+        "en": "Status",
+        "sv": "Driftstatus"
+      },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
@@ -31,7 +45,10 @@
     },
     "thermia_opmode": {
       "type": "string",
-      "title": { "en": "Operation mode", "sv": "Driftläge" },
+      "title": {
+        "en": "Operation mode",
+        "sv": "Driftläge"
+      },
       "getable": true,
       "setable": false,
       "uiComponent": "sensor",
@@ -39,7 +56,10 @@
     },
     "hotwater_status": {
       "type": "boolean",
-      "title": { "en": "Hot water", "sv": "Varmvatten" },
+      "title": {
+        "en": "Hot water",
+        "sv": "Varmvatten"
+      },
       "getable": true,
       "setable": true,
       "uiComponent": "toggle",
@@ -47,7 +67,10 @@
     },
     "hotwater_boost": {
       "type": "boolean",
-      "title": { "en": "Hot water boost", "sv": "Varmvattenboost" },
+      "title": {
+        "en": "Hot water boost",
+        "sv": "Varmvattenboost"
+      },
       "getable": true,
       "setable": true,
       "uiComponent": "toggle",
@@ -58,95 +81,252 @@
     "triggers": [
       {
         "id": "operational_status_changed",
-        "title": { "en": "Operational status changed", "sv": "Driftstatus ändrades" },
+        "title": {
+          "en": "Operational status changed",
+          "sv": "Driftstatus ändrades"
+        },
         "tokens": [
-          { "name": "status", "type": "string", "title": { "en": "Status", "sv": "Status" }, "example": "no demand" }
+          {
+            "name": "status",
+            "type": "string",
+            "title": {
+              "en": "Status",
+              "sv": "Status"
+            },
+            "example": "no demand"
+          }
         ],
         "args": [
-          { "name": "device", "type": "device", "filter": "driver_id=thermia" }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=thermia"
+          }
         ]
       },
       {
         "id": "compressor_hours_above",
-        "title": { "en": "Compressor hours exceed", "sv": "Kompressortimmar överstiger" },
-        "titleFormatted": { "en": "Compressor hours exceed [[hours]] h", "sv": "Kompressortimmar överstiger [[hours]] h" },
+        "title": {
+          "en": "Compressor hours exceed",
+          "sv": "Kompressortimmar överstiger"
+        },
+        "titleFormatted": {
+          "en": "Compressor hours exceed [[hours]] h",
+          "sv": "Kompressortimmar överstiger [[hours]] h"
+        },
         "tokens": [
-          { "name": "hours", "type": "number", "title": { "en": "Hours", "sv": "Timmar" }, "example": 7444 }
+          {
+            "name": "hours",
+            "type": "number",
+            "title": {
+              "en": "Hours",
+              "sv": "Timmar"
+            },
+            "example": 7444
+          }
         ],
         "args": [
-          { "name": "device", "type": "device", "filter": "driver_id=thermia" },
-          { "name": "hours", "type": "number", "min": 0, "step": 100, "placeholder": { "en": "40000", "sv": "40000" } }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=thermia"
+          },
+          {
+            "name": "hours",
+            "type": "number",
+            "min": 0,
+            "step": 100,
+            "placeholder": {
+              "en": "40000",
+              "sv": "40000"
+            }
+          }
         ]
       },
       {
         "id": "hotwater_hours_above",
-        "title": { "en": "Hot water hours exceed", "sv": "Varmvattentimmar överstiger" },
-        "titleFormatted": { "en": "Hot water hours exceed [[hours]] h", "sv": "Varmvattentimmar överstiger [[hours]] h" },
+        "title": {
+          "en": "Hot water hours exceed",
+          "sv": "Varmvattentimmar överstiger"
+        },
+        "titleFormatted": {
+          "en": "Hot water hours exceed [[hours]] h",
+          "sv": "Varmvattentimmar överstiger [[hours]] h"
+        },
         "tokens": [
-          { "name": "hours", "type": "number", "title": { "en": "Hours", "sv": "Timmar" }, "example": 809 }
+          {
+            "name": "hours",
+            "type": "number",
+            "title": {
+              "en": "Hours",
+              "sv": "Timmar"
+            },
+            "example": 809
+          }
         ],
         "args": [
-          { "name": "device", "type": "device", "filter": "driver_id=thermia" },
-          { "name": "hours", "type": "number", "min": 0, "step": 100, "placeholder": { "en": "10000", "sv": "10000" } }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=thermia"
+          },
+          {
+            "name": "hours",
+            "type": "number",
+            "min": 0,
+            "step": 100,
+            "placeholder": {
+              "en": "10000",
+              "sv": "10000"
+            }
+          }
         ]
       }
     ],
     "conditions": [
       {
         "id": "operational_status_is",
-        "title": { "en": "Operational status !{{is|is not}}", "sv": "Driftstatus !{{är|är inte}}" },
-        "titleFormatted": { "en": "Operational status !{{is|is not}} [[status]]", "sv": "Driftstatus !{{är|är inte}} [[status]]" },
+        "title": {
+          "en": "Operational status !{{is|is not}}",
+          "sv": "Driftstatus !{{är|är inte}}"
+        },
+        "titleFormatted": {
+          "en": "Operational status !{{is|is not}} [[status]]",
+          "sv": "Driftstatus !{{är|är inte}} [[status]]"
+        },
         "args": [
-          { "name": "device", "type": "device", "filter": "driver_id=thermia" },
-          { "name": "status", "type": "text", "placeholder": { "en": "no demand", "sv": "no demand" } }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=thermia"
+          },
+          {
+            "name": "status",
+            "type": "text",
+            "placeholder": {
+              "en": "no demand",
+              "sv": "no demand"
+            }
+          }
         ]
       },
       {
         "id": "hotwater_is_on",
-        "title": { "en": "Hot water !{{is|is not}} on", "sv": "Varmvatten !{{är|är inte}} på" },
+        "title": {
+          "en": "Hot water !{{is|is not}} on",
+          "sv": "Varmvatten !{{är|är inte}} på"
+        },
         "args": [
-          { "name": "device", "type": "device", "filter": "driver_id=thermia" }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=thermia"
+          }
         ]
       }
     ],
     "actions": [
       {
         "id": "set_room_temperature",
-        "title": { "en": "Set room temperature", "sv": "Sätt rumstemperatur" },
-        "titleFormatted": { "en": "Set room temperature to [[temperature]] °C", "sv": "Sätt rumstemperatur till [[temperature]] °C" },
+        "title": {
+          "en": "Set room temperature",
+          "sv": "Sätt rumstemperatur"
+        },
+        "titleFormatted": {
+          "en": "Set room temperature to [[temperature]] °C",
+          "sv": "Sätt rumstemperatur till [[temperature]] °C"
+        },
         "args": [
-          { "name": "device", "type": "device", "filter": "driver_id=thermia" },
-          { "name": "temperature", "type": "number", "min": 10, "max": 35, "step": 1, "placeholder": { "en": "21", "sv": "21" } }
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=thermia"
+          },
+          {
+            "name": "temperature",
+            "type": "number",
+            "min": 10,
+            "max": 35,
+            "step": 1,
+            "placeholder": {
+              "en": "21",
+              "sv": "21"
+            }
+          }
         ]
       },
       {
         "id": "set_hotwater",
-        "title": { "en": "Turn hot water on/off", "sv": "Slå på/av varmvatten" },
-        "titleFormatted": { "en": "Turn hot water [[mode]]", "sv": "Slå [[mode]] varmvattnet" },
+        "title": {
+          "en": "Turn hot water on/off",
+          "sv": "Slå på/av varmvatten"
+        },
+        "titleFormatted": {
+          "en": "Turn hot water [[mode]]",
+          "sv": "Slå [[mode]] varmvattnet"
+        },
         "args": [
-          { "name": "device", "type": "device", "filter": "driver_id=thermia" },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=thermia"
+          },
           {
             "name": "mode",
             "type": "dropdown",
             "values": [
-              { "id": "on", "title": { "en": "on", "sv": "på" } },
-              { "id": "off", "title": { "en": "off", "sv": "av" } }
+              {
+                "id": "on",
+                "title": {
+                  "en": "on",
+                  "sv": "på"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "off",
+                  "sv": "av"
+                }
+              }
             ]
           }
         ]
       },
       {
         "id": "set_hotwater_boost",
-        "title": { "en": "Turn hot water boost on/off", "sv": "Slå på/av varmvattenboost" },
-        "titleFormatted": { "en": "Turn hot water boost [[mode]]", "sv": "Slå [[mode]] varmvattenboosten" },
+        "title": {
+          "en": "Turn hot water boost on/off",
+          "sv": "Slå på/av varmvattenboost"
+        },
+        "titleFormatted": {
+          "en": "Turn hot water boost [[mode]]",
+          "sv": "Slå [[mode]] varmvattenboosten"
+        },
         "args": [
-          { "name": "device", "type": "device", "filter": "driver_id=thermia" },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=thermia"
+          },
           {
             "name": "mode",
             "type": "dropdown",
             "values": [
-              { "id": "on", "title": { "en": "on", "sv": "på" } },
-              { "id": "off", "title": { "en": "off", "sv": "av" } }
+              {
+                "id": "on",
+                "title": {
+                  "en": "on",
+                  "sv": "på"
+                }
+              },
+              {
+                "id": "off",
+                "title": {
+                  "en": "off",
+                  "sv": "av"
+                }
+              }
             ]
           }
         ]
@@ -156,7 +336,10 @@
   "drivers": [
     {
       "id": "thermia",
-      "name": { "en": "Thermia Heat Pump", "sv": "Thermia värmepump" },
+      "name": {
+        "en": "Thermia Heat Pump",
+        "sv": "Thermia värmepump"
+      },
       "class": "thermostat",
       "capabilities": [
         "target_temperature",
@@ -173,17 +356,68 @@
       ],
       "capabilitiesOptions": {
         "target_temperature": {
-          "title": { "en": "Room temperature (curve)", "sv": "Rumstemperatur (kurva)" },
+          "title": {
+            "en": "Room temperature (curve)",
+            "sv": "Rumstemperatur (kurva)"
+          },
           "min": 10,
           "max": 35,
           "step": 1
         },
-        "measure_temperature": { "title": { "en": "Outdoor temperature", "sv": "Utetemperatur" }, "min": -50, "max": 150, "decimals": 1 },
-        "measure_temperature.supply": { "title": { "en": "Supply line", "sv": "Framledning" }, "min": -50, "max": 150, "decimals": 1 },
-        "measure_temperature.return": { "title": { "en": "Return line", "sv": "Returledning" }, "min": -50, "max": 150, "decimals": 1 },
-        "measure_temperature.brine_in": { "title": { "en": "Brine in", "sv": "Brine in" }, "min": -50, "max": 150, "decimals": 1 },
-        "measure_temperature.brine_out": { "title": { "en": "Brine out", "sv": "Brine ut" }, "min": -50, "max": 150, "decimals": 1 },
-        "measure_temperature.hotwater": { "title": { "en": "Hot water", "sv": "Varmvatten" }, "min": -50, "max": 150, "decimals": 1 }
+        "measure_temperature": {
+          "title": {
+            "en": "Outdoor temperature",
+            "sv": "Utetemperatur"
+          },
+          "min": -50,
+          "max": 150,
+          "decimals": 1
+        },
+        "measure_temperature.supply": {
+          "title": {
+            "en": "Supply line",
+            "sv": "Framledning"
+          },
+          "min": -50,
+          "max": 150,
+          "decimals": 1
+        },
+        "measure_temperature.return": {
+          "title": {
+            "en": "Return line",
+            "sv": "Returledning"
+          },
+          "min": -50,
+          "max": 150,
+          "decimals": 1
+        },
+        "measure_temperature.brine_in": {
+          "title": {
+            "en": "Brine in",
+            "sv": "Brine in"
+          },
+          "min": -50,
+          "max": 150,
+          "decimals": 1
+        },
+        "measure_temperature.brine_out": {
+          "title": {
+            "en": "Brine out",
+            "sv": "Brine ut"
+          },
+          "min": -50,
+          "max": 150,
+          "decimals": 1
+        },
+        "measure_temperature.hotwater": {
+          "title": {
+            "en": "Hot water",
+            "sv": "Varmvatten"
+          },
+          "min": -50,
+          "max": 150,
+          "decimals": 1
+        }
       },
       "images": {
         "small": "/drivers/thermia/assets/images/small.png",
@@ -194,15 +428,23 @@
           "id": "login_credentials",
           "template": "login_credentials",
           "options": {
-            "usernameLabel": { "en": "Email", "sv": "E-post" },
+            "usernameLabel": {
+              "en": "Email",
+              "sv": "E-post"
+            },
             "usernamePlaceholder": "namn@example.com",
-            "passwordLabel": { "en": "Password", "sv": "Losenord" }
+            "passwordLabel": {
+              "en": "Password",
+              "sv": "Losenord"
+            }
           }
         },
         {
           "id": "list_devices",
           "template": "list_devices",
-          "navigation": { "next": "add_devices" }
+          "navigation": {
+            "next": "add_devices"
+          }
         },
         {
           "id": "add_devices",
